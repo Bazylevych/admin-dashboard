@@ -40,7 +40,7 @@ const Contacts: FC = () => {
         subtitle="List of Contacts for Future Reference"
       />
       <Box
-        m="40px 0 0 0"
+        m="0px"
         height="75vh"
         sx={{
           "& .name-column--cell": {
@@ -50,7 +50,7 @@ const Contacts: FC = () => {
       >
         <DataGrid
           rows={mockDataContacts}
-          slots={{toolbar: GridToolbar}}
+          slots={{ toolbar: GridToolbar }}
           columns={columns}
           sx={{
             "& .MuiDataGrid-cell": {
