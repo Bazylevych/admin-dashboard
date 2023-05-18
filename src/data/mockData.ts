@@ -1,4 +1,8 @@
-import { IMockDataContact, IMockDataTeam } from "../models/mockData";
+import {
+  IMockDataContact,
+  IMockDataInvoices,
+  IMockDataTeam,
+} from "../models/mockData";
 import { tokens } from "../theme";
 
 export const mockDataTeam: IMockDataTeam[] = [
@@ -200,7 +204,7 @@ export const mockDataContacts: IMockDataContact[] = [
   },
 ];
 
-export const mockDataInvoices = [
+export const mockDataInvoices: IMockDataInvoices[] = [
   {
     id: 1,
     name: "Jon Snow",
