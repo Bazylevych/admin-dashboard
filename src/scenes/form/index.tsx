@@ -49,6 +49,7 @@ const Form: FC = () => {
                 width="30vw"
                 sx={{
                   gap: "25px",
+                  minWidth: "250px",
                   backgroundColor: `rgba(114, 118, 129, 0.2)`,
                   p: "30px 30px 20px 30px ",
                   borderRadius: "10px",
@@ -71,6 +72,7 @@ const Form: FC = () => {
                   helperText={touched.firstName && errors.firstName}
                   sx={{
                     maxWidth: "320px",
+                    minWidth: "220px",
                   }}
                 />
                 <TextField
@@ -86,6 +88,7 @@ const Form: FC = () => {
                   helperText={touched.lastName && errors.lastName}
                   sx={{
                     maxWidth: "320px",
+                    minWidth: "220px",
                   }}
                 />
                 <TextField
@@ -101,6 +104,7 @@ const Form: FC = () => {
                   helperText={touched.email && errors.email}
                   sx={{
                     maxWidth: "320px",
+                    minWidth: "220px",
                   }}
                 />
                 <TextField
@@ -116,6 +120,7 @@ const Form: FC = () => {
                   helperText={touched.contact && errors.contact}
                   sx={{
                     maxWidth: "320px",
+                    minWidth: "220px",
                   }}
                 />
                 <TextField
@@ -131,6 +136,7 @@ const Form: FC = () => {
                   helperText={touched.address1 && errors.address1}
                   sx={{
                     maxWidth: "320px",
+                    minWidth: "220px",
                   }}
                 />
                 <TextField
@@ -146,6 +152,7 @@ const Form: FC = () => {
                   helperText={touched.address2 && errors.address2}
                   sx={{
                     maxWidth: "320px",
+                    minWidth: "220px",
                   }}
                 />
                 <Box
@@ -156,7 +163,12 @@ const Form: FC = () => {
                     textAlign: "center",
                   }}
                 >
-                  <Button type="submit" color="secondary" variant="outlined">
+                  <Button
+                    type="submit"
+                    color="secondary"
+                    variant="outlined"
+                    size="large"
+                  >
                     Create New User
                   </Button>
                 </Box>
