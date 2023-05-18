@@ -25,15 +25,16 @@ const Item: FC<ItemProps> = ({
   const colors = tokens(theme.palette.mode);
 
   return (
-    <MenuItem
-      active={selected === title}
-      style={{ color: colors.grey[100] }}
-      onClick={() => setSelected(title)}
-      icon={collapsed ? <IconButton>{icon}</IconButton> : icon}
-    >
-      <Typography variant="h6">{title}</Typography>
-      <Link to={to} />
-    </MenuItem>
+    <Link to={to}>
+      <MenuItem
+        active={selected === title}
+        style={{ color: colors.grey[100] }}
+        onClick={() => setSelected(title)}
+        icon={collapsed ? <IconButton>{icon}</IconButton> : icon}
+      >
+        <Typography variant="h6">{title}</Typography>
+      </MenuItem>
+    </Link>
   );
 };
 
