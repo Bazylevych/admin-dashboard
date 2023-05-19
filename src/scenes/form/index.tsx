@@ -2,8 +2,8 @@ import { FC } from "react";
 import { Box, Button, TextField, useMediaQuery, useTheme } from "@mui/material";
 import Header from "../global/Header";
 import { Formik } from "formik";
-import { initialValues } from "../../constans/form/initialValues";
-import { userSchema } from "../../constans/form/userSchema";
+import { initialValues } from "../../utils/form/initialValues";
+import { userSchema } from "../../utils/form/userSchema";
 import { tokens } from "../../theme";
 
 const Form: FC = () => {

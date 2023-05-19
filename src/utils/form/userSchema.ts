@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { PHONE_REGEXP } from "../constans";
+import { PHONE_REGEXP } from "../../constans/constans";
 
 export const userSchema = yup.object().shape({
   firstName: yup.string().required("required"),
