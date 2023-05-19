@@ -5,7 +5,6 @@ import {
   IMockDataTeam,
 } from "../models/mockData";
 import { tokens } from "../theme";
-import { MayHaveLabel } from "@nivo/pie";
 
 export const mockDataTeam: IMockDataTeam[] = [
   {

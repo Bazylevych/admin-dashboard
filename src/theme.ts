@@ -1,6 +1,7 @@
-import { createContext, useMemo } from "react";
-import { ThemeOptions, createTheme } from "@mui/material/styles";
+import { Context, createContext, useMemo } from "react";
+import { Theme, ThemeOptions, createTheme } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
+import { IColorModeContext } from "./models/context";
 
 //* color design tokens
 export const tokens = (mode: PaletteMode) => ({
@@ -194,13 +195,13 @@ export const themeSettings = (mode: PaletteMode): ThemeOptions => {
 };
 
 //* context for color mode
-export const ColorModeContext = createContext({
+export const ColorModeContext: Context<IColorModeContext> = createContext({
   toggleColorMode: () => {},
 });
 
 //* hooks for theme and colorMode
 export const useMyTheme = (mode: PaletteMode) => {
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const theme: Theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
   return theme;
 };
@@ -208,7 +209,7 @@ export const useMyTheme = (mode: PaletteMode) => {
 export const useColorMode = (
   setMode: React.Dispatch<React.SetStateAction<PaletteMode>>
 ) => {
-  const colorMode = useMemo(
+  const colorMode: IColorModeContext = useMemo(
     () => ({
       toggleColorMode: () =>
         setMode((prev) => (prev === "light" ? "dark" : "light")),
