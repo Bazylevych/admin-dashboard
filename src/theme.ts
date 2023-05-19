@@ -2,9 +2,10 @@ import { Context, createContext, useMemo } from "react";
 import { Theme, ThemeOptions, createTheme } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 import { IColorModeContext } from "./models/context";
+import { IColors } from "./models/theme";
 
 //* color design tokens
-export const tokens = (mode: PaletteMode) => ({
+export const tokens = (mode: PaletteMode): IColors => ({
   ...(mode === "dark"
     ? {
         grey: {

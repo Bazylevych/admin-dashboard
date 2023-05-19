@@ -22,6 +22,7 @@ import {
 import { INITIAL_EVENTS, createEventId } from "../../utils/calendar/eventUtils";
 import Header from "../global/Header";
 import { DateInput } from "@fullcalendar/core";
+import CalendarSidebar from "./CalendarSidebar";
 
 const Calendar: FC = () => {
   const theme = useTheme();
@@ -65,41 +66,7 @@ const Calendar: FC = () => {
         }}
       >
         {/* CALENDAR SIDEBAR */}
-        <Box
-          flex="1 1 20%"
-          sx={{
-            backgroundColor: `${colors.primary[400]}`,
-            padding: "15px",
-            borderRadius: "4px",
-          }}
-        >
-          <Typography variant="h5">Events</Typography>
-          <List>
-            {currentEvents.map((event: EventApi) => (
-              <ListItem
-                key={event.id}
-                sx={{
-                  backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
-                  borderRadius: "2px",
-                }}
-              >
-                <ListItemText
-                  primary={event.title}
-                  secondary={
-                    <Typography>
-                      {formatDate(event.start as DateInput, {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+        <CalendarSidebar currentEvents={currentEvents} colors={colors} />
 
         {/* CALENDAR */}
         <Box

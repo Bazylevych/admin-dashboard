@@ -16,6 +16,6 @@ export const INITIAL_EVENTS: EventInput[] = [
   },
 ];
 
-export function createEventId() {
+export function createEventId(): string {
   return String(eventGuid++);
 }
