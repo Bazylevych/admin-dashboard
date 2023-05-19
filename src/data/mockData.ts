@@ -1,9 +1,11 @@
+import { BarDatum } from "@nivo/bar";
 import {
   IMockDataContact,
   IMockDataInvoices,
   IMockDataTeam,
 } from "../models/mockData";
 import { tokens } from "../theme";
+import { MayHaveLabel } from "@nivo/pie";
 
 export const mockDataTeam: IMockDataTeam[] = [
   {
@@ -322,7 +324,7 @@ export const mockTransactions = [
   },
 ];
 
-export const mockBarData = [
+export const mockBarData: BarDatum[] = [
   {
     country: "AD",
     "hot dog": 137,
