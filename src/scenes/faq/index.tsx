@@ -1,15 +1,9 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { FC } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../theme";
 import Header from "../global/Header";
+import { faqData } from "../../data/faqData";
+import FaqBlock from "./FaqBlock";
 
 const FAQ: FC = () => {
   const theme = useTheme();
@@ -23,75 +17,13 @@ const FAQ: FC = () => {
     >
       <Header title="FAQ" subtitle="Frequently Asked Questions Page" />
 
-      <Accordion defaultExpanded>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant="h5">
-            An Important Queation
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-            praesentium?
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion defaultExpanded>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant="h5">
-            Another Important Queation
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-            praesentium?
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion defaultExpanded>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant="h5">
-            Another Important Queation
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-            praesentium?
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion defaultExpanded>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant="h5">
-            Another Important Queation
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-            praesentium?
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion defaultExpanded>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} variant="h5">
-            Another Important Queation
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-            praesentium?
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+      {faqData.map((data) => (
+        <FaqBlock
+          question={data.question}
+          answer={data.answer}
+          color={colors.greenAccent[500]}
+        />
+      ))}
     </Box>
   );
 };
