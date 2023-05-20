@@ -1,4 +1,6 @@
-export const geoFeatures = {
+import { IGeoFeatures } from "../models/mockData";
+
+export const geoFeatures: IGeoFeatures = {
   type: "FeatureCollection",
   features: [
     {
