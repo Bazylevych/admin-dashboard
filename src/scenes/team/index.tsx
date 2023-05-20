@@ -1,12 +1,11 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { FC } from "react";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityIcon from "@mui/icons-material/SecurityOutlined";
 import { tokens } from "../../theme";
 import Header from "../global/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { mockDataTeam } from "../../data/mockData";
+import TeamRenderCell from "./TeamRenderCell";
+import { IRenderCell } from "../../models/team";
 
 const Team: FC = () => {
   const theme = useTheme();
@@ -34,29 +33,8 @@ const Team: FC = () => {
       field: "access",
       headerName: "ACCESS",
       flex: 1,
-      renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="60%"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            sx={{
-              backgroundColor:
-                access === "admin"
-                  ? colors.greenAccent[600]
-                  : colors.greenAccent[700],
-            }}
-            borderRadius="4px"
-          >
-            {access === "admin" && <AdminPanelSettingsIcon />}
-            {access === "manager" && <SecurityIcon />}
-            {access === "user" && <LockOpenIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
-          </Box>
-        );
+      renderCell: ({ row: { access } }: IRenderCell) => {
+        return <TeamRenderCell access={access} colors={colors} />;
       },
     },
   ];

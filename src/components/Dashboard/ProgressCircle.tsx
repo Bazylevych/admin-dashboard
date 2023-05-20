@@ -3,14 +3,14 @@ import { FC } from "react";
 import { tokens } from "../../theme";
 
 interface ProgressCircleProps {
-  progress: number;
-  size: number;
+  progress?: number;
+  size?: number;
 }
 
 const ProgressCircle: FC<ProgressCircleProps> = ({
   progress = 0.75,
   size = 40,
-}) => {
+}: ProgressCircleProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const angle = progress * 360;

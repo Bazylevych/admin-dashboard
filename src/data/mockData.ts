@@ -3,6 +3,10 @@ import {
   IMockDataContact,
   IMockDataInvoices,
   IMockDataTeam,
+  IMockGeographyData,
+  IMockLineData,
+  IMockPieData,
+  IMockTransactions,
 } from "../models/mockData";
 import { tokens } from "../theme";
 
@@ -272,7 +276,7 @@ export const mockDataInvoices: IMockDataInvoices[] = [
   },
 ];
 
-export const mockTransactions = [
+export const mockTransactions: IMockTransactions[] = [
   {
     txId: "01e4dsa",
     user: "johndoe",
@@ -403,7 +407,7 @@ export const mockBarData: BarDatum[] = [
   },
 ];
 
-export const mockPieData = [
+export const mockPieData: IMockPieData[] = [
   {
     id: "hack",
     label: "hack",
@@ -436,7 +440,7 @@ export const mockPieData = [
   },
 ];
 
-export const mockLineData = [
+export const mockLineData: IMockLineData[] = [
   {
     id: "japan",
     color: tokens("dark").greenAccent[500],
@@ -601,7 +605,7 @@ export const mockLineData = [
   },
 ];
 
-export const mockGeographyData = [
+export const mockGeographyData: IMockGeographyData[] = [
   {
     id: "AFG",
     value: 520600,

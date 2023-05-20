@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
 import { tokens } from "../../theme";
-import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Header from "../global/Header";
 import { mockDataInvoices } from "../../data/mockData";
 
