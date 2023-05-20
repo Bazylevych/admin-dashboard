@@ -13,6 +13,7 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { tokens } from "../../theme";
 import { FC } from "react";
+import { sidebarElements } from "../../data/sidebar";
 
 interface MenuItemsProps {
   collapsed: boolean;
@@ -39,6 +40,7 @@ const MenuItems: FC<MenuItemsProps> = ({
         collapsed={collapsed}
       />
 
+      {/* DATA */}
       <Typography
         variant="h6"
         color={colors.grey[300]}
@@ -48,31 +50,19 @@ const MenuItems: FC<MenuItemsProps> = ({
       >
         Data
       </Typography>
-      <Item
-        title="Manage Team"
-        to="/team"
-        icon={<PeopleOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="Contacts Information"
-        to="/contacts"
-        icon={<ContactsOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="Invoices Balances"
-        to="/invoices"
-        icon={<ReceiptOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
 
+      {sidebarElements.data.map((item) => (
+        <Item
+          title={item.title}
+          to={item.to}
+          icon={item.icon}
+          selected={selected}
+          setSelected={setSelected}
+          collapsed={collapsed}
+        />
+      ))}
+
+      {/* PAGES */}
       <Typography
         variant="h6"
         color={colors.grey[300]}
@@ -82,31 +72,19 @@ const MenuItems: FC<MenuItemsProps> = ({
       >
         Pages
       </Typography>
-      <Item
-        title="Profile Form"
-        to="/form"
-        icon={<PersonOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="Calendar"
-        to="/calendar"
-        icon={<CalendarTodayOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="FAQ"
-        to="/faq"
-        icon={<HelpOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
 
+      {sidebarElements.pages.map((item) => (
+        <Item
+          title={item.title}
+          to={item.to}
+          icon={item.icon}
+          selected={selected}
+          setSelected={setSelected}
+          collapsed={collapsed}
+        />
+      ))}
+
+      {/* CHARTS */}
       <Typography
         variant="h6"
         color={colors.grey[300]}
@@ -116,38 +94,16 @@ const MenuItems: FC<MenuItemsProps> = ({
       >
         Charts
       </Typography>
-      <Item
-        title="Bar Chart"
-        to="/bar"
-        icon={<BarChartOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="Pie Chart"
-        to="/pie"
-        icon={<PieChartOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="Line Chart"
-        to="/line"
-        icon={<TimelineOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
-      <Item
-        title="Geography Chart"
-        to="/geography"
-        icon={<MapOutlinedIcon />}
-        selected={selected}
-        setSelected={setSelected}
-        collapsed={collapsed}
-      />
+      {sidebarElements.charts.map((item) => (
+        <Item
+          title={item.title}
+          to={item.to}
+          icon={item.icon}
+          selected={selected}
+          setSelected={setSelected}
+          collapsed={collapsed}
+        />
+      ))}
     </Box>
   );
 };
